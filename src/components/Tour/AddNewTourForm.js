@@ -10,10 +10,12 @@ const AddNewTourForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredName = nameInputRef.current.value;
-    const enteredCountry = dateInputRef.current.value;
-    const enteredDate = countryInputRef.current.value;
+    const enteredCountry = countryInputRef.current.value;
+    const enteredDate = dateInputRef.current.value;
     const enteredPhoto = photoInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
+    // "https://cdn.turkishairlines.com/m/536e8df8c381e006/original/Travel-Guide-of-Paris-via-Turkish-Airlines.jpg"
+    // "https://www.poland.travel/images/ru-RU/Miasta/krakow_rynek_2_1170.jpg"
 
     const newTourData = {
       name: enteredName,
