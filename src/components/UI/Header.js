@@ -11,7 +11,7 @@ const Header = () => {
   const iconClasses = `${classes.button} ${isHighLighted ? classes.bump : ""}`;
 
   const { toursInCart } = cartCtx;
-  console.log(cartCtx.totalToursInCart);
+ 
 
   useEffect(() => {
     if (toursInCart.length === 0) {

@@ -27,7 +27,6 @@ const DUMMY_DATA = [
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
-  console.log("log from CART", cartCtx.toursInCart);
 
   return (
     <div>

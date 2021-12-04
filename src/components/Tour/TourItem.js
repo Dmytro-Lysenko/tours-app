@@ -5,17 +5,14 @@ import CartContext from "../../store/cart-context";
 const TourItem = (props) => {
   const [readMore, setReadMore] = useState(false);
   const cartCtx = useContext(CartContext);
-  const [cartState, setCartState] = useState([]);
 
   const toogleReadMoreHandler = () => {
     setReadMore(!readMore);
   };
 
   const addToCartHandler = () => {
-    cartCtx.addTour(props)
+    cartCtx.addTour(props);
   };
-  console.log(cartCtx.toursInCart);
-  console.log(cartCtx);
 
   return (
     <div className={classes.container}>
@@ -33,12 +30,17 @@ const TourItem = (props) => {
           {!readMore ? " read more" : " hide"}
         </button>
       </p>
-      <button className={classes.button} onClick={() => props.onDel(props.id)}>
-        Delete tour
-      </button>
-      <button className={classes.button} onClick={addToCartHandler}>
-        Buy tour
-      </button>
+      <div className={classes.actions}>
+        <button
+          className={classes.button}
+          onClick={() => props.onDel(props.id)}
+        >
+          Delete tour
+        </button>
+        <button className={classes.button} onClick={addToCartHandler}>
+          Buy tour
+        </button>
+      </div>
     </div>
   );
 };

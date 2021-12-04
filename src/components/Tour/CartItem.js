@@ -5,7 +5,6 @@ import classes from "./CartItem.module.css";
 
 const CartItem = (props) => {
   const cartCtx = useContext(CartContext);
-  const [cartState, setCartState] = useState([]);
   const [readMore, setReadMore] = useState(false);
 
   const toogleReadMoreHandler = () => {

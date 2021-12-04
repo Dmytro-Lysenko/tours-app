@@ -105,7 +105,7 @@ const AllTours = () => {
         if (a.country < b.country) {
           return -1;
         }
-        // a должно быть равным b
+        // a must be equel b
         return 0;
       });
       console.log(byDate);
@@ -122,7 +122,7 @@ const AllTours = () => {
         if (a.date < b.date) {
           return -1;
         }
-        // a должно быть равным b
+        // a must be equel b
         return 0;
       });
       console.log(byDate);
@@ -130,36 +130,7 @@ const AllTours = () => {
         return (prevByDate = byDate);
       });
     }
-
-    //   const byCountry = loadedTours.map((tour) => {
-    //     if (tour.country === "Poland") {
-    //       return tour;
-    //     }
-    //   });
-    //   //   setLoadedTours(byCountry)
-    //   console.log(byCountry);
-    // }
-
-    // ///by price
-    // if (input === "by price") {
-    //   const byPrice = loadedTours.sort(function (a, b) {
-    //     if (a.date > b.date) {
-    //       return 1;
-    //     }
-    //     if (a.date < b.date) {
-    //       return -1;
-    //     }
-    //     // a должно быть равным b
-    //     return 0;
-    //   });
-    //   console.log(byPrice);
-    //   setSortedTours((prevCountry) => {
-    //     return (prevCountry = byPrice);
-    //   });
-    // }
   };
-
-  console.log(loadedTours);
 
   if (isLoading) {
     return (

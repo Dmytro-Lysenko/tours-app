@@ -1,8 +1,7 @@
 import CartItem from "./CartItem";
 
 const CartList = (props) => {
-  console.log(props);
-  console.log(props.tours);
+  
 
   return (
     <div>

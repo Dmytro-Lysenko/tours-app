@@ -41,11 +41,17 @@
 }
 
 .buttonRead {
-    color: #538378;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.2rem;
-    border: none;
+  color: #538378;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .button {
