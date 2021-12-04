@@ -1,0 +1,26 @@
+.header {
+  background-color: darkolivegreen;
+}
+
+.header ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header li {
+  list-style: none;
+  color: #ffffff;
+  padding: 1rem;
+}
+.header li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header li a:hover,
+.header li a:active {
+    cursor: pointer;
+    color: #c4bcbc;
+    
+  }

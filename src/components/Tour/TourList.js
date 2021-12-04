@@ -2,7 +2,7 @@ import TourItem from "./TourItem";
 
 const TourList = (props) => {
   return (
-    <section>
+    <section style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
       {props.tours.map((tour) => (
         <TourItem onDel={props.onDel}
           key={tour.id}

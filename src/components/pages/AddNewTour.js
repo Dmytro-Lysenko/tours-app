@@ -20,8 +20,8 @@ const AddNewTour = () => {
   };
 
   return (
-    <div>
-      <h1>Add NEw TOur</h1>
+    <div style={{ background: 'lightblue', height: '100vh' }}>
+      <h1 style={{ textAlign: "center", padding: "2rem" }}>Add New Tour</h1>
       <AddNewTourForm onSubmit={addNewTourHandler} />
     </div>
   );

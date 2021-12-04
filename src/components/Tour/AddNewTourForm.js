@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import classes from './AddNewTourForm.module.css'
 
 const AddNewTourForm = (props) => {
   const nameInputRef = useRef();
@@ -29,24 +30,24 @@ const AddNewTourForm = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div>
+    <form className={classes.form} onSubmit={submitHandler}>
+      <div className={classes.control}>
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" ref={nameInputRef} />
       </div>
-      <div>
+      <div className={classes.control}>
         <label htmlFor="contry">Country</label>
         <input type="text" id="country" ref={countryInputRef} />
       </div>
-      <div>
+      <div className={classes.control}>
         <label htmlFor="date">Date:</label>
         <input type="date" id="date" ref={dateInputRef} />
       </div>
-      <div>
+      <div className={classes.control}>
         <label htmlFor="photo">Photo:</label>
         <input type="url" id="photo" ref={photoInputRef} />
       </div>
-      <div>
+      <div className={classes.control}>
         <label>Description:</label>
         <textarea
           id="description"
@@ -55,7 +56,7 @@ const AddNewTourForm = (props) => {
           ref={descriptionInputRef}
         ></textarea>
       </div>
-      <div>
+      <div className={classes.actions}>
         <button>Add tour</button>
       </div>
     </form>

@@ -10,21 +10,21 @@ const TourItem = (props) => {
 
   return (
     <div className={classes.container}>
-      <h2>{props.name}</h2>
-      <h1>{props.country}</h1>
-      <h1>{props.date}</h1>
+      <h1 className={classes.country}>{props.country}</h1>
       <div className={classes.photo}>
         <img src={props.photo} alt={props.name} />
       </div>
-      <p>
+      <h2 className={classes.title}>{props.name}</h2>
+      <h1 className={classes.date}>{props.date}</h1>
+      <p className={classes.description}>
         {readMore
           ? props.description
-          : `${props.description.substring(0, 20)}...`}
-        <button onClick={toogleReadMoreHandler}>
-          {!readMore ? "read more" : "hide"}
+          : `${props.description.substring(0, 38)}...`}
+        <button className={classes.buttonRead} onClick={toogleReadMoreHandler}>
+          {!readMore ? " read more" : " hide"}
         </button>
       </p>
-      <button onClick={() => props.onDel(props.id)}>Delete tour</button>
+      <button className={classes.button} onClick={() => props.onDel(props.id)}>Delete tour</button>
     </div>
   );
 };

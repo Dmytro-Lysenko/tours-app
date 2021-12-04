@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react";
+import { createClassExpression } from "typescript";
 import TourList from "../Tour/TourList";
+import classes from "./AllTours.module.css";
 
 const AllTours = () => {
   const inputRef = useRef();
@@ -129,7 +131,6 @@ const AllTours = () => {
       });
     }
 
-
     //   const byCountry = loadedTours.map((tour) => {
     //     if (tour.country === "Poland") {
     //       return tour;
@@ -160,7 +161,7 @@ const AllTours = () => {
 
   if (isLoading) {
     return (
-      <section>
+      <section className={classes.loading}>
         <p>Loading</p>
       </section>
     );
@@ -179,10 +180,10 @@ const AllTours = () => {
   };
 
   return (
-    <div>
-      <h1>All tours</h1>
+    <div className={classes.main}>
+      <h1 className={classes.allTours}>All tours</h1>
       <div>
-        <form onSubmit={submitHandler}>
+        <form className={classes.form} onSubmit={submitHandler}>
           <label>
             Sort by:
             <select value={input} onChange={handleChanger}>
