@@ -1,21 +1,20 @@
 import { useState, useContext } from "react";
-import classes from "./TourItem.module.css";
 import CartContext from "../../store/cart-context";
 
-const TourItem = (props) => {
-  const [readMore, setReadMore] = useState(false);
+import classes from "./CartItem.module.css";
+
+const CartItem = (props) => {
   const cartCtx = useContext(CartContext);
   const [cartState, setCartState] = useState([]);
+  const [readMore, setReadMore] = useState(false);
 
   const toogleReadMoreHandler = () => {
     setReadMore(!readMore);
   };
 
-  const addToCartHandler = () => {
-    cartCtx.addTour(props)
+  const deleteCarthandler = () => {
+    cartCtx.deleteTour(props.id);
   };
-  console.log(cartCtx.toursInCart);
-  console.log(cartCtx);
 
   return (
     <div className={classes.container}>
@@ -33,14 +32,10 @@ const TourItem = (props) => {
           {!readMore ? " read more" : " hide"}
         </button>
       </p>
-      <button className={classes.button} onClick={() => props.onDel(props.id)}>
+      <button className={classes.button} onClick={deleteCarthandler}>
         Delete tour
-      </button>
-      <button className={classes.button} onClick={addToCartHandler}>
-        Buy tour
       </button>
     </div>
   );
 };
-
-export default TourItem;
+export default CartItem;

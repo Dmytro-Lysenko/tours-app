@@ -159,6 +159,8 @@ const AllTours = () => {
     // }
   };
 
+  console.log(loadedTours);
+
   if (isLoading) {
     return (
       <section className={classes.loading}>
