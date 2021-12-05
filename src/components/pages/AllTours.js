@@ -1,13 +1,12 @@
-import { useEffect, useState, useRef } from "react";
-import { createClassExpression } from "typescript";
+import { useEffect, useState } from "react";
 import TourList from "../Tour/TourList";
 import classes from "./AllTours.module.css";
 
 const AllTours = () => {
-  const inputRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
   const [loadedTours, setLoadedTours] = useState([]);
   const [sortedTours, setSortedTours] = useState([]);
+  const [sortedToursByCountry, setSortedToursByContry] = useState([]);
   const [error, setError] = useState("");
   const [input, setInput] = useState("");
   const url =
@@ -57,7 +56,7 @@ const AllTours = () => {
       if (a.date < b.date) {
         return -1;
       }
-      // a должно быть равным b
+      // a must be equel to 0
       return 0;
     });
     // const f = loadedTours.sort(function (a, b) {
@@ -70,15 +69,16 @@ const AllTours = () => {
     //     // a должно быть равным b
     //     return 0;
     //   });
+    const updY = y.filter((item) => item.country === "Poland");
+
     console.log(y);
+    console.log(updY);
     // console.log(f);
-    setSortedTours(y);
+    setLoadedTours(updY);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(input);
-    console.log("clicked");
 
     if (input === "Date") {
       const byDate = loadedTours.sort(function (b, a) {
@@ -108,10 +108,19 @@ const AllTours = () => {
         // a must be equel b
         return 0;
       });
-      console.log(byDate);
-      setSortedTours((prevByDate) => {
-        return (prevByDate = byDate);
+      // console.log(byDate);
+      // setSortedTours((prevByDate) => {
+      //   return (prevByDate = byDate);
+      // });
+
+      const updY = sortedTours.filter((item) => item.country === "Poland");
+
+      console.log(updY);
+      // console.log(f);
+      setSortedTours((prev) => {
+        return (prev = updY);
       });
+      setSortedToursByContry(updY);
     }
 
     if (input === "Price") {
@@ -132,6 +141,8 @@ const AllTours = () => {
     }
   };
 
+  console.log(sortedToursByCountry);
+
   if (isLoading) {
     return (
       <section className={classes.loading}>
@@ -151,6 +162,7 @@ const AllTours = () => {
   const handleChanger = (event) => {
     setInput(event.target.value);
   };
+
 
   return (
     <div className={classes.main}>
